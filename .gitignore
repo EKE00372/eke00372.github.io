@@ -1,0 +1,42 @@
+# 本機工作資料、維護筆記與預覽截圖
+/.self/
+/_DOC/
+
+# Ruby / Jekyll 依賴、快取與建置輸出
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+_site/
+vendor/
+
+# Node / Cloudflare 本機依賴與執行資料
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+!.dev.vars.sample
+!.dev.vars.template
+
+# 本機環境設定；範例設定仍可提交
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+
+# Python 本機環境與快取
+/.venv/
+/venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# 編輯器與系統暫存
+.vscode/
+.idea/
+.history/
+.DS_Store
+Thumbs.db
+Desktop.ini
