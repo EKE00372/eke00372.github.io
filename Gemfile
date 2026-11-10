@@ -1,0 +1,11 @@
+source "https://rubygems.org"
+
+gem "jekyll", "3.10.0"
+gem "kramdown-parser-gfm", "1.1.0"
+gem "jekyll-remote-theme", "0.4.3"
+gem "jekyll-seo-tag", "2.8.0"
+gem "jekyll-include-cache", "0.2.1"
+gem "rake", ">= 12.3.1"
+gem "base64"
+gem "bigdecimal"
+gem "webrick", "~> 1.8"

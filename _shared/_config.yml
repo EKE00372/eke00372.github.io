@@ -1,0 +1,27 @@
+baseurl: ""
+lang: zh-Hant
+
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-include-cache
+
+color_scheme: dark
+permalink: pretty
+nav_enabled: true
+heading_anchors: true
+enable_copy_code_button: true
+
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 2
+  rel_url: false
+  focus_shortcut_key: k
+
+back_to_top: true
+back_to_top_text: 回到頁首
+
+exclude:
+  - README.md
