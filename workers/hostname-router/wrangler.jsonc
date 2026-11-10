@@ -1,7 +1,7 @@
 {
   "name": "eklib-hostname-router",
   "main": "src/index.mjs",
-  "compatibility_date": "2026-11-11",
+  "compatibility_date": "2026-11-10",
   "workers_dev": false,
   "preview_urls": false,
   "routes": [
