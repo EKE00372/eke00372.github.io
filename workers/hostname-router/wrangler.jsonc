@@ -1,0 +1,11 @@
+{
+  "name": "eklib-hostname-router",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-11-11",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "wow.eklib.io", "custom_domain": true },
+    { "pattern": "note.eklib.io", "custom_domain": true }
+  ]
+}
