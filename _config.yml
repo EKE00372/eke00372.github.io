@@ -1,1 +1,19 @@
-theme: jekyll-theme-midnight
+# Branch-based publishing fallback: show apex navigation until Actions is enabled.
+title: ""
+description: ""
+url: "https://eklib.io"
+baseurl: ""
+lang: zh-Hant
+
+exclude:
+  - .self/
+  - _DOC/
+  - AGENTS.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - sites/
+  - _shared/
+  - scripts/
+  - workers/
+  - node_modules/

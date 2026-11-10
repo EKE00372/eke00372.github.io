@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EKLib 的筆記、插件與使用教學。">
+    <link rel="canonical" href="https://eklib.io/">
+    <meta name="color-scheme" content="dark">
+    <title>EKLib · 網站導航</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #242428;
+        color: #efedf4;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 3rem 1.5rem;
+        background: radial-gradient(ellipse at 50% 0, #302d3c 0, transparent 65%);
+      }
+
+      main { width: min(100%, 44rem); }
+
+      .masthead {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+        font-weight: 650;
+        letter-spacing: -0.045em;
+        line-height: 1.1;
+      }
+
+      .intro {
+        margin: 0.85rem 0 0;
+        color: #b7b3c3;
+        font-size: 0.95rem;
+        line-height: 1.8;
+      }
+
+      .site-entry {
+        display: grid;
+        grid-template-columns: 2.75rem minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1.1rem;
+        border: 1px solid #4a4554;
+        border-radius: 0.75rem;
+        background: #2e2c34;
+        color: inherit;
+        text-decoration: none;
+        transition: border-color 150ms ease, background-color 150ms ease;
+      }
+
+      .site-entry:hover,
+      .forum-link:hover {
+        border-color: #a49aff;
+        background: #34313e;
+      }
+
+      .site-entry:focus-visible,
+      .forum-link:focus-visible,
+      .secondary-link:focus-visible {
+        outline: 2px solid #b5b0ff;
+        outline-offset: 5px;
+      }
+
+      .monogram {
+        display: grid;
+        place-items: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border: 1px solid #6d5c39;
+        border-radius: 0.55rem;
+        background: #3b3429;
+        color: #e6c98a;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.7rem;
+      }
+
+      .category {
+        margin: 0 0 0.35rem;
+        color: #b8a684;
+        font-size: 0.6rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        line-height: 1.5;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.4;
+      }
+
+      .summary {
+        margin: 0.45rem 0 0.65rem;
+        color: #c1bdcb;
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+
+      .destination {
+        color: #aaa7b5;
+        font-family: ui-monospace, Consolas, monospace;
+        font-size: 0.7rem;
+      }
+
+      .entry-action {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: #c3bdff;
+        font-size: 0.75rem;
+        white-space: nowrap;
+      }
+
+      .entry-action svg { width: 1.1rem; height: 1.1rem; }
+
+      .forum-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .forum-link {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 1.1rem;
+        border: 1px solid #4a4554;
+        border-radius: 0.65rem;
+        background: #2e2c34;
+        color: inherit;
+        text-decoration: none;
+        transition: border-color 150ms ease, background-color 150ms ease;
+      }
+
+      .forum-title { font-size: 0.95rem; font-weight: 600; line-height: 1.6; }
+
+      .forum-description {
+        display: block;
+        margin-top: 0.25rem;
+        color: #c1bdcb;
+        font-size: 0.8rem;
+        line-height: 1.6;
+      }
+
+      .forum-link .destination {
+        display: block;
+        margin-top: 0.4rem;
+        overflow-wrap: anywhere;
+      }
+
+      .forum-link svg { width: 1.1rem; height: 1.1rem; color: #c3bdff; }
+
+      .link-group {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #4a4554;
+        border-radius: 0.65rem;
+        background: #2e2c34;
+      }
+
+      .card-heading { padding: 1rem 1.1rem 0.65rem; }
+
+      .card-heading h2 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.6;
+      }
+
+      .card-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 0.6rem;
+        margin-top: auto;
+        padding: 0 1.1rem 0.85rem;
+      }
+
+      .secondary-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 2rem;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid #696175;
+        border-radius: 0.4rem;
+        color: #c9c2d9;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        text-decoration: none;
+      }
+
+      .secondary-link:hover { border-color: #b5b0ff; background: #393441; }
+      .secondary-link svg { width: 0.85rem; height: 0.85rem; }
+
+      @media (max-width: 48rem) {
+        .masthead { grid-template-columns: 1fr; gap: 1.25rem; }
+      }
+
+      @media (max-width: 40rem) {
+        body { padding: 2rem 1.25rem; }
+        .entry-action-label { display: none; }
+        .forum-links { grid-template-columns: 1fr; }
+        .secondary-link { min-height: 2.75rem; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .site-entry, .forum-link { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav aria-label="網站導航">
+        <div class="masthead">
+          <header>
+            <h1>EKLib</h1>
+            <p class="intro">筆記、插件與使用教學。</p>
+          </header>
+          <a class="site-entry" href="https://wow.eklib.io/" aria-labelledby="wow-title" aria-describedby="wow-summary">
+            <span class="monogram" aria-hidden="true">W</span>
+            <div>
+              <p class="category">WORLD OF WARCRAFT</p>
+              <h2 id="wow-title">魔獸世界</h2>
+              <p class="summary" id="wow-summary">一些筆記</p>
+              <span class="destination">wow.eklib.io</span>
+            </div>
+            <span class="entry-action" aria-hidden="true">
+              <span class="entry-action-label">進入網站</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12h15M13 5l7 7-7 7"></path>
+              </svg>
+            </span>
+          </a>
+        </div>
+        <div class="forum-links">
+          <section class="link-group community-link" aria-labelledby="official-forums-title">
+            <div class="card-heading">
+              <h2 id="official-forums-title">官網論壇</h2>
+            </div>
+            <div class="card-actions">
+              <a class="secondary-link" href="https://us.forums.blizzard.com/en/wow/" aria-label="官網論壇：美服">
+                美服
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+              <a class="secondary-link" href="https://eu.forums.blizzard.com/en/wow/" aria-label="官網論壇：歐服">
+                歐服
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+            </div>
+          </section>
+          <a class="forum-link community-link" href="https://yinseliming.flowus.cn/" aria-labelledby="silver-dawn-title" aria-describedby="silver-dawn-description">
+            <span>
+              <span class="forum-title" id="silver-dawn-title">銀色黎明</span>
+              <span class="forum-description" id="silver-dawn-description">魔獸世界創作者聯盟計劃</span>
+              <span class="destination">yinseliming.flowus.cn</span>
+            </span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7M7 7h10v10"></path>
+            </svg>
+          </a>
+          <section class="link-group community-link" aria-labelledby="warcraft-wiki-title">
+            <div class="card-heading">
+              <h2 id="warcraft-wiki-title">魔獸世界維基百科</h2>
+            </div>
+            <div class="card-actions">
+              <a class="secondary-link" href="https://warcraft.wiki.gg/wiki/Warcraft_Wiki" aria-label="魔獸世界維基百科：遊戲維基">
+                遊戲維基
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+              <a class="secondary-link" href="https://wowdev.wiki/" aria-label="魔獸世界維基百科：開發維基">
+                開發維基
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17 17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+            </div>
+          </section>
+          <a class="forum-link community-link" href="https://wago.tools/" aria-labelledby="wago-tools-title" aria-describedby="wago-tools-description">
+            <span>
+              <span class="forum-title" id="wago-tools-title">Wago Tools</span>
+              <span class="forum-description" id="wago-tools-description">遊戲資料探勘</span>
+              <span class="destination">wago.tools</span>
+            </span>
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17 17 7M7 7h10v10"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </main>
+  </body>
+</html>
